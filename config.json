@@ -71,9 +71,10 @@
     "tiempo_maximo_pedido_s": 60
   },
   "interfaz": {
-    "ocultar_tras_inactividad_s": 20,
-    "opacidad_fondo": 0,
-    "desenfoque": 5
+    "ocultar_tras_inactividad_s": 8,
+    "opacidad_fondo": 22,
+    "desenfoque": 14,
+    "mostrar_detalles": false
   },
   "voz": {
     "activada": true,

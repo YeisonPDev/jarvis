@@ -413,8 +413,11 @@ class VentanaJarvis(QWidget):
         self.boton_cancelar.show()
         self.etiqueta_herramienta.hide()
         self.respuesta.hide()
-        self._mostrar_aviso("Pensando…")
-        self.circulo.establecer_estado("pensando")
+        self.aviso.hide()
+        if self.config.mostrar_detalles:
+            self._mostrar_aviso("Pensando…")
+        self.circulo.establecer_estado("pensando")  # el cubo girando ya indica que trabaja
+        self._ajustar_tamano()
         self._reiniciar_inactividad()
 
         trabajador = Trabajador(self.agente, texto)
@@ -468,10 +471,12 @@ class VentanaJarvis(QWidget):
     # --- Señales del trabajador --------------------------------------- #
     def _al_estado(self, estado: str) -> None:
         self.circulo.establecer_estado(estado)
-        if estado == "pensando":
+        if estado == "pensando" and self.config.mostrar_detalles:
             self._mostrar_aviso("Pensando…")
 
     def _al_herramienta(self, nombre: str, argumentos: str) -> None:
+        if not self.config.mostrar_detalles:
+            return  # solo se muestra la respuesta final
         # Una sola línea, recortada con "…": la isla no crece por argumentos largos.
         texto = f"⚙ {nombre} {argumentos}"
         self.etiqueta_herramienta.setToolTip(texto)
@@ -484,7 +489,8 @@ class VentanaJarvis(QWidget):
         self.pregunta.setText(pregunta)
         self.confirmacion.show()
         self.circulo.establecer_estado("esperando")
-        self._mostrar_aviso("Esperando tu confirmación…")
+        self.aviso.hide()
+        self._ajustar_tamano()
         self.boton_no.setFocus()  # por seguridad, el foco queda en "No"
         if self.config.voz.leer_confirmaciones:
             self._hablar(pregunta.split("\n", 1)[0])  # solo la primera línea, sin detalles técnicos
@@ -495,7 +501,7 @@ class VentanaJarvis(QWidget):
         if self._trabajador is not None:
             self._trabajador.responder_confirmacion(aprobado)
             self.circulo.establecer_estado("pensando")
-            self._mostrar_aviso("Pensando…")
+        self._ajustar_tamano()
         self._reiniciar_inactividad()
 
     def _al_terminar(self, texto: str) -> None:

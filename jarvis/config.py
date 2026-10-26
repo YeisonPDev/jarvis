@@ -166,6 +166,7 @@ class Config:
     motor_busqueda: str = "https://www.google.com/search?q="
     limites: Limites = field(default_factory=Limites)
     ocultar_tras_inactividad_s: float = 30  # 0 = nunca se oculta solo
+    mostrar_detalles: bool = False  # mostrar en la isla la herramienta en uso y el estado
     opacidad_fondo: int = 45  # 0 (vidrio muy transparente) a 100 (negro sólido)
     desenfoque: int = 18  # radio del desenfoque en píxeles (0 = sin desenfoque)
     ciudad: str = ""  # ciudad por defecto para el clima
@@ -285,6 +286,7 @@ class Config:
             ),
             voz=voz,
             opacidad_fondo=entero("opacidad_fondo", 45, 0, 100),
+            mostrar_detalles=bool(interfaz.get("mostrar_detalles", False)),
             desenfoque=entero("desenfoque", 18, 0, 40),
             ciudad=str((datos.get("ubicacion") or {}).get("ciudad", "")).strip()[:100],
             busqueda_api_key=(os.getenv("JARVIS_GROQ_API_KEY", "").strip()
