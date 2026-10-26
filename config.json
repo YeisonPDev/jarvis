@@ -1,0 +1,102 @@
+{
+  "atajo": "ctrl+space",
+  "carpetas_permitidas": [
+    "{ESCRITORIO}",
+    "{DOCUMENTOS}",
+    "{DESCARGAS}",
+    "{MUSICA}",
+    "{IMAGENES}",
+    "{VIDEOS}"
+  ],
+  "carpetas_bloqueadas_extra": [],
+  "carpeta_salida": "{DOCUMENTOS}\\Jarvis",
+  "lista_negra": {
+    "extensiones": [],
+    "nombres": [],
+    "prefijos": [],
+    "palabras": [],
+    "carpetas": []
+  },
+  "extensiones_ejecutables_extra": [],
+  "programas": {
+    "word": "winword.exe",
+    "microsoft word": "winword.exe",
+    "excel": "excel.exe",
+    "microsoft excel": "excel.exe",
+    "powerpoint": "powerpnt.exe",
+    "microsoft powerpoint": "powerpnt.exe",
+    "outlook": "outlook.exe",
+    "correo": "outlook.exe",
+    "onenote": "onenote.exe",
+    "access": "msaccess.exe",
+    "publisher": "mspub.exe",
+    "calendario": "outlookcal:",
+    "teams": "ms-teams.exe",
+    "whatsapp": "whatsapp:",
+    "chrome": "chrome.exe",
+    "google chrome": "chrome.exe",
+    "edge": "msedge.exe",
+    "microsoft edge": "msedge.exe",
+    "firefox": "firefox.exe",
+    "navegador": "https://www.google.com",
+    "visual studio code": "code.exe",
+    "vs code": "code.exe",
+    "notepad++": "notepad++.exe",
+    "bloc de notas": "notepad.exe",
+    "calculadora": "calc.exe",
+    "paint": "mspaint.exe",
+    "recortes": "snippingtool.exe",
+    "explorador": "explorer.exe",
+    "configuracion": "ms-settings:",
+    "reloj": "ms-clock:",
+    "alarmas": "ms-clock:",
+    "fotos": "ms-photos:",
+    "to do": "ms-todo:",
+    "spotify": "spotify:",
+    "vlc": "vlc.exe",
+    "acrobat": "acrobat.exe",
+    "winrar": "winrar.exe",
+    "power point": "powerpnt.exe"
+  },
+  "motor_busqueda": "https://www.google.com/search?q=",
+  "limites": {
+    "max_tamano_archivo_mb": 10,
+    "max_caracteres_lectura": 8000,
+    "max_resultados_busqueda": 25,
+    "max_archivos_revisados": 30000,
+    "tiempo_busqueda_s": 8,
+    "max_elementos_listado": 200,
+    "max_caracteres_creacion": 50000,
+    "max_iteraciones": 10,
+    "tiempo_maximo_pedido_s": 60
+  },
+  "interfaz": {
+    "ocultar_tras_inactividad_s": 20,
+    "opacidad_fondo": 0,
+    "desenfoque": 5
+  },
+  "voz": {
+    "activada": true,
+    "motor": "piper",
+    "piper_voz": "es_MX-claude-high",
+    "openai_modelo": "gpt-4o-mini-tts",
+    "openai_voz": "onyx",
+    "openai_instrucciones": "Habla siempre en {idioma}. Voz grave, calmada y segura, como un asistente de inteligencia artificial elegante y eficiente. Ritmo ágil y natural, sin exagerar la emoción.",
+    "nombre": "Raul",
+    "velocidad": 1.0,
+    "volumen": 100,
+    "max_caracteres": 1500,
+    "leer_confirmaciones": true,
+    "leer_errores": true
+  },
+  "idioma": {
+    "codigo": "es",
+    "nombre": "Español"
+  },
+  "ubicacion": {
+    "ciudad": "bucaramanga santander"
+  },
+  "busqueda": {
+    "modelo": "openai/gpt-oss-20b"
+  }
+}

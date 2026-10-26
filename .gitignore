@@ -1,0 +1,18 @@
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Entorno virtual y caché
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Registros
+logs/
+*.log
+.env.example
+nuevo1.txtnuevo1.txt
+nuevo1.txt
